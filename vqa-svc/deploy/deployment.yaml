@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vqa-svc
+spec:
+  selector:
+    matchLabels:
+      app: vqa-svc
+      tier: backend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vqa-svc
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: vqa-svc
+          image: "392385672822.dkr.ecr.us-east-1.amazonaws.com/vqa-svc:latest"
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: POSTGRES_HOST #todo - replace with whatever keys needed for rekognition
+              valueFrom:
+                secretKeyRef:
+                  name: sleigh-postgres-configuration
+                  key: POSTGRES_HOST
