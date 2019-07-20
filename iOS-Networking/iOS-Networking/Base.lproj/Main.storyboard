@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,67 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Networking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ts-vC-fxK">
+                                <rect key="frame" x="20" y="72" width="367" height="412"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="367" id="9Hf-Zz-M2o"/>
+                                    <constraint firstAttribute="height" constant="412" id="OXf-4o-fzs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-Vg-pDa">
+                                <rect key="frame" x="109" y="605" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="LtM-4J-rFB"/>
+                                    <constraint firstAttribute="width" constant="42" id="rR5-kZ-pkU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="26"/>
+                                <state key="normal" title="Get"/>
+                                <connections>
+                                    <action selector="onGetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfj-BT-0DM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogp-Lh-Z1v">
+                                <rect key="frame" x="245" y="605" width="53" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="JCo-yW-X0y"/>
+                                    <constraint firstAttribute="width" constant="53" id="Xh5-gR-dCo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="26"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onPostTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KcT-Qj-dMw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BnN-Vg-pDa" secondAttribute="bottom" constant="215" id="Q4U-ur-GPa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ogp-Lh-Z1v" secondAttribute="trailing" constant="116" id="RW9-f9-cT9"/>
+                            <constraint firstItem="BnN-Vg-pDa" firstAttribute="top" secondItem="6Ts-vC-fxK" secondAttribute="bottom" constant="121" id="TnK-gb-7Gx"/>
+                            <constraint firstItem="ogp-Lh-Z1v" firstAttribute="leading" secondItem="BnN-Vg-pDa" secondAttribute="trailing" constant="94" id="XBQ-W4-g4r"/>
+                            <constraint firstItem="BnN-Vg-pDa" firstAttribute="top" secondItem="6Ts-vC-fxK" secondAttribute="bottom" constant="121" id="bBh-Fg-Tzd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ogp-Lh-Z1v" secondAttribute="bottom" constant="215" id="fSD-21-G2O"/>
+                            <constraint firstItem="ogp-Lh-Z1v" firstAttribute="top" secondItem="6Ts-vC-fxK" secondAttribute="bottom" constant="121" id="h1a-mI-UbJ"/>
+                            <constraint firstItem="ogp-Lh-Z1v" firstAttribute="leading" secondItem="BnN-Vg-pDa" secondAttribute="trailing" constant="94" id="jtz-5o-0PK"/>
+                            <constraint firstItem="BnN-Vg-pDa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="lls-ik-Suh"/>
+                            <constraint firstItem="6Ts-vC-fxK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="lqx-NC-JHH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Ts-vC-fxK" secondAttribute="trailing" constant="27" id="tic-33-2fN"/>
+                            <constraint firstItem="6Ts-vC-fxK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xFa-BJ-KuO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="6Ts-vC-fxK" id="v0F-Hs-wgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
